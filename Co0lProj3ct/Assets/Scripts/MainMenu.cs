@@ -8,6 +8,7 @@ namespace AssemblyCSharp
 	{
 		public bool isStart;
 		public bool isQuit;
+
 		internal void OnMouseUp(){
 			if(isStart)
 			{
