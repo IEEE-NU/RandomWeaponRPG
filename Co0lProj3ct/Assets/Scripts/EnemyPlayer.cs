@@ -5,6 +5,7 @@ public class EnemyPlayer:MonoBehaviour
 {
 	Player player;
 	const float speed = 5f;
+	public float health = 40.0f;
 
 	void Start(){
 		player = FindObjectOfType<Player> ();
@@ -12,6 +13,9 @@ public class EnemyPlayer:MonoBehaviour
 
 	void Update(){
 		transform.position = Vector3.MoveTowards (transform.position, player.transform.position, speed * Time.deltaTime);
+		if (health < 0.0f) {
+			Destroy (gameObject);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D obj){
